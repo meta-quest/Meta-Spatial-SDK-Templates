@@ -6,7 +6,7 @@ The environment entity and both panels are created by the glXFManager.inflateGLX
 
 ## Meta Spatial Editor
 
-This templatee requires you to install [Meta Spatial Editor](https://developers.meta.com/horizon/documentation/spatial-sdk/spatial-editor-overview).
+This template requires you to install [Meta Spatial Editor](https://developers.meta.com/horizon/documentation/spatial-sdk/spatial-editor-overview).
 Edit the scene by opening app/scenes/Main.metaspatial with Meta Spatial Editor.
 
 ## Spatial SDK Gradle Plugin
