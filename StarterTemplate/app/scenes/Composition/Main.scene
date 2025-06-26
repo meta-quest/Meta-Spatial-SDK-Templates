@@ -1,0 +1,90 @@
+entities:
+  com.meta.models.Scene:
+    - components:
+        com.meta.components.Name:
+          {}
+        com.meta.components.Scene:
+          nodes:
+            - ref:ComposeListPanel
+            - ref:Environment
+            - ref:WebviewPanel
+      tag: Scene
+  com.meta.models.SceneNode:
+    - components:
+        com.meta.components.Animatable:
+          {}
+        com.meta.components.DocumentReference:
+          transformType: None
+          documentReference: projref:environment/Main.metaspatialobj
+        com.meta.components.Name:
+          name: Environment
+        com.meta.components.PointerNodeInverseComponent:
+          {}
+        com.meta.components.SceneNode:
+          rotation.format: Euler
+          scale:
+            - 1
+            - 1
+            - 1
+          componentVersion: 1
+        com.meta.spatial.toolkit.SupportsLocomotion:
+          {}
+      tag: Environment
+    - components:
+        com.meta.components.Animatable:
+          {}
+        com.meta.components.Name:
+          name: WebviewPanel
+        com.meta.components.PointerNodeInverseComponent:
+          {}
+        com.meta.components.SceneNode:
+          rotation.data:
+            - 6.12323426e-17
+            - 6.12323426e-17
+            - 1
+            - -3.74939976e-33
+          rotation.format: Quaternion
+          scale:
+            - 2
+            - 1.5
+            - 1
+          translation:
+            - 0.293153703
+            - 1.10000002
+            - -1.69989443
+          componentVersion: 1
+        com.meta.spatial.toolkit.Panel:
+          panel: "@layout/ui_example"
+        com.meta.spatial.toolkit.PanelDimensions:
+          {}
+      tag: WebviewPanel
+    - components:
+        com.meta.components.Animatable:
+          {}
+        com.meta.components.Name:
+          name: ComposeListPanel
+        com.meta.components.PointerNodeInverseComponent:
+          {}
+        com.meta.components.SceneNode:
+          rotation.data:
+            - 3.14159274
+            - 0
+            - 3.14159274
+            - 0
+          rotation.format: Euler
+          scale:
+            - 0.75
+            - 0.75
+            - 1
+          translation:
+            - -1.20488644
+            - 1.0999999
+            - -1.70000005
+          componentVersion: 1
+        com.meta.spatial.toolkit.Panel:
+          panel: "@id/panel_activity"
+        com.meta.spatial.toolkit.PanelDimensions:
+          {}
+      tag: ComposeListPanel
+metadata:
+  version: 1.29
