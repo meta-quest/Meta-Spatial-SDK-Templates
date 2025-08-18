@@ -25,19 +25,24 @@ class PanelActivity : ComponentActivity() {
         listOf(
             Pair(
                 "Introducing Meta Spatial SDK",
-                "https://www.youtube.com/embed/6aKbrPp09jo?autoplay=1;fs=1;autohide=0;hd=0;"),
+                "https://www.youtube.com/embed/6aKbrPp09jo?autoplay=1;fs=1;autohide=0;hd=0;",
+            ),
             Pair(
                 "Your First Meta Spatial SDK App",
-                "https://www.youtube.com/embed/dfXtUbROf20?autoplay=1;fs=1;autohide=0;hd=0;"),
+                "https://www.youtube.com/embed/dfXtUbROf20?autoplay=1;fs=1;autohide=0;hd=0;",
+            ),
             Pair(
                 "Integrate Into an Existing Android App",
-                "https://www.youtube.com/embed/qCBqGUufbVE?autoplay=1;fs=1;autohide=0;hd=0;"),
+                "https://www.youtube.com/embed/qCBqGUufbVE?autoplay=1;fs=1;autohide=0;hd=0;",
+            ),
             Pair(
                 "Meta Spatial SDK Custom Components",
-                "https://www.youtube.com/embed/UnWCxIlKyNM?autoplay=1;fs=1;autohide=0;hd=0;"),
+                "https://www.youtube.com/embed/UnWCxIlKyNM?autoplay=1;fs=1;autohide=0;hd=0;",
+            ),
             Pair(
                 "Partner and Product Showcase",
-                "https://www.youtube.com/embed/0Q9cH-JxEGg?autoplay=1;fs=1;autohide=0;hd=0;"),
+                "https://www.youtube.com/embed/0Q9cH-JxEGg?autoplay=1;fs=1;autohide=0;hd=0;",
+            ),
         )
   }
 
@@ -58,19 +63,21 @@ fun CardList() {
               .background(Color(0xfffffbfe))
               .padding(16.dp),
       verticalArrangement = Arrangement.Center,
-      horizontalAlignment = Alignment.CenterHorizontally) {
-        Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-          repeat(5) { index ->
-            CardItem(
-                title = PanelActivity.webViewUrls[index].first,
-                onClick = {
-                  val intent = Intent("com.meta.spatial.samples.PLAY_VIDEO")
-                  intent.putExtra("webviewURI", PanelActivity.webViewUrls[index].second)
-                  context.sendBroadcast(intent)
-                })
-          }
-        }
+      horizontalAlignment = Alignment.CenterHorizontally,
+  ) {
+    Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
+      repeat(5) { index ->
+        CardItem(
+            title = PanelActivity.webViewUrls[index].first,
+            onClick = {
+              val intent = Intent("com.meta.spatial.samples.PLAY_VIDEO")
+              intent.putExtra("webviewURI", PanelActivity.webViewUrls[index].second)
+              context.sendBroadcast(intent)
+            },
+        )
       }
+    }
+  }
 }
 
 @Composable
@@ -85,8 +92,9 @@ fun CardItem(title: String, onClick: () -> Unit) {
     Column(
         modifier = Modifier.fillMaxWidth().padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center) {
-          BasicText(text = title, style = TextStyle(fontSize = 25.sp))
-        }
+        verticalArrangement = Arrangement.Center,
+    ) {
+      BasicText(text = title, style = TextStyle(fontSize = 25.sp))
+    }
   }
 }
