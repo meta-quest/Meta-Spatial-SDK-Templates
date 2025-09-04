@@ -17,9 +17,10 @@ jobs:
         run: |
           echo "RELEASE_TAG=$(date +'%Y.%m.%d-%H%M%S')" >> $GITHUB_ENV
 
-      - name: Zip directory
+      - name: Zip directories
         run: |
           zip -r StarterTemplate.zip StarterTemplate
+          zip -r MixedRealityTemplate.zip MixedRealityTemplate
 
       - name: Create GitHub Release
         id: create_release
@@ -33,7 +34,7 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset
+      - name: Upload StarterTemplate Asset
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -41,4 +42,14 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./StarterTemplate.zip
           asset_name: StarterTemplate.zip
+          asset_content_type: application/zip
+
+      - name: Upload MixedRealityTemplate Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./MixedRealityTemplate.zip
+          asset_name: MixedRealityTemplate.zip
           asset_content_type: application/zip
