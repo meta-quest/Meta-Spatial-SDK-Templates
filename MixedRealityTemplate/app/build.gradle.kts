@@ -13,7 +13,7 @@ android {
     applicationId = "com.meta.spatial.samples.mixedrealitytemplate"
     minSdk = 29
     //noinspection ExpiredTargetSdkVersion
-    targetSdk = 32
+    targetSdk = 34
     versionCode = 1
     versionName = "1.0"
 
@@ -23,14 +23,7 @@ android {
     // ndkVersion = "27.0.12077973"
   }
 
-  packaging {
-    resources.excludes.add("META-INF/LICENSE")
-    resources.excludes.add("LICENSE")
-    resources.excludes.add("LICENSE.CC0")
-    resources.excludes.add("LICENSE.blob")
-    resources.excludes.add("LICENSE.Apachev2")
-    resources.excludes.add("LICENSE.MIT")
-  }
+  packaging { resources.excludes.add("META-INF/LICENSE") }
 
   lint { abortOnError = false }
 

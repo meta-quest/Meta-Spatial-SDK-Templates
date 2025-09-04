@@ -9,4 +9,4 @@ entities:
           scenes:
             - ref:Scene
 metadata:
-  version: 1.33
+  version: 1.34

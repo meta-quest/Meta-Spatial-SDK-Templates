@@ -12,9 +12,9 @@ import android.widget.TextView
 import com.meta.spatial.castinputforward.CastInputForwardFeature
 import com.meta.spatial.core.Entity
 import com.meta.spatial.core.SpatialFeature
-import com.meta.spatial.core.Vector3
 import com.meta.spatial.datamodelinspector.DataModelInspectorFeature
 import com.meta.spatial.debugtools.HotReloadFeature
+import com.meta.spatial.isdk.IsdkFeature
 import com.meta.spatial.okhttp3.OkHttpAssetFetcher
 import com.meta.spatial.ovrmetrics.OVRMetricsDataModel
 import com.meta.spatial.ovrmetrics.OVRMetricsFeature
@@ -38,7 +38,8 @@ class ImmersiveActivity : AppSystemActivity() {
   lateinit var receiver: BroadcastReceiver
 
   override fun registerFeatures(): List<SpatialFeature> {
-    val features = mutableListOf<SpatialFeature>(VRFeature(this))
+    val features =
+        mutableListOf<SpatialFeature>(VRFeature(this), IsdkFeature(this, spatial, systemManager))
     if (BuildConfig.DEBUG) {
       features.add(CastInputForwardFeature(this))
       features.add(HotReloadFeature(this))
@@ -64,14 +65,6 @@ class ImmersiveActivity : AppSystemActivity() {
 
   override fun onSceneReady() {
     super.onSceneReady()
-
-    scene.setLightingEnvironment(
-        ambientColor = Vector3(0f),
-        sunColor = Vector3(7.0f, 7.0f, 7.0f),
-        sunDirection = -Vector3(1.0f, 3.0f, -2.0f),
-        environmentIntensity = 0.3f,
-    )
-    scene.updateIBLEnvironment("environment.env")
 
     scene.setViewOrigin(0.0f, 0.0f, 2.0f, 180.0f)
   }
