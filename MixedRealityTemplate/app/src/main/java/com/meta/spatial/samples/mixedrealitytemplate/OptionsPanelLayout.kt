@@ -39,23 +39,23 @@ fun OptionsPanel(playVideo: (String) -> Unit) {
       listOf(
           Pair(
               "Introducing Meta Spatial SDK",
-              "https://www.youtube.com/embed/6aKbrPp09jo?autoplay=1;fs=1;autohide=0;hd=0;",
+              "https://www.youtube-nocookie.com/embed/6aKbrPp09jo?autoplay=1;fs=1;autohide=0;hd=0;",
           ),
           Pair(
               "Your first Meta Spatial SDK app",
-              "https://www.youtube.com/embed/dfXtUbROf20?autoplay=1;fs=1;autohide=0;hd=0;",
+              "https://www.youtube-nocookie.com/embed/dfXtUbROf20?autoplay=1;fs=1;autohide=0;hd=0;",
           ),
           Pair(
               "Integrate into an existing Android app",
-              "https://www.youtube.com/embed/qCBqGUufbVE?autoplay=1;fs=1;autohide=0;hd=0;",
+              "https://www.youtube-nocookie.com/embed/qCBqGUufbVE?autoplay=1;fs=1;autohide=0;hd=0;",
           ),
           Pair(
               "Meta Spatial SDK custom components",
-              "https://www.youtube.com/embed/UnWCxIlKyNM?autoplay=1;fs=1;autohide=0;hd=0;",
+              "https://www.youtube-nocookie.com/embed/UnWCxIlKyNM?autoplay=1;fs=1;autohide=0;hd=0;",
           ),
           Pair(
               "Partner and product showcase",
-              "https://www.youtube.com/embed/0Q9cH-JxEGg?autoplay=1;fs=1;autohide=0;hd=0;",
+              "https://www.youtube-nocookie.com/embed/0Q9cH-JxEGg?autoplay=1;fs=1;autohide=0;hd=0;",
           ),
       )
   SpatialTheme(colorScheme = getPanelTheme()) {
