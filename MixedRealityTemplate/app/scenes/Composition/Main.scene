@@ -37,7 +37,7 @@ entities:
         com.meta.spatial.toolkit.Grabbable:
           {}
         com.meta.spatial.toolkit.Panel:
-          panel: "@layout/ui_example"
+          panel: "@id/ui_example"
         com.meta.spatial.toolkit.PanelDimensions:
           {}
       tag: WebviewPanel
@@ -56,7 +56,7 @@ entities:
             - 0
           rotation.format: Euler
           scale:
-            - 0.75
+            - 0.850000024
             - 0.75
             - 1
           translation:
@@ -69,7 +69,7 @@ entities:
         com.meta.spatial.toolkit.Grabbable:
           {}
         com.meta.spatial.toolkit.Panel:
-          panel: "@id/panel_activity"
+          panel: "@id/options_panel"
         com.meta.spatial.toolkit.PanelDimensions:
           {}
       tag: ComposeListPanel

@@ -15,7 +15,7 @@ entities:
           {}
         com.meta.components.DocumentReference:
           transformType: None
-          documentReference: projref:environment/Main.metaspatialobj
+          documentReference: projref:collab_room/Main.metaspatialobj
         com.meta.components.Name:
           name: Environment
         com.meta.components.PointerNodeInverseComponent:
@@ -27,6 +27,8 @@ entities:
             - 1
             - 1
           componentVersion: 1
+        com.meta.components.Visibility:
+          visible: true
         com.meta.spatial.toolkit.SupportsLocomotion:
           {}
       tag: Environment
@@ -53,8 +55,10 @@ entities:
             - 1.10000002
             - -1.69989443
           componentVersion: 1
+        com.meta.components.Visibility:
+          visible: true
         com.meta.spatial.toolkit.Panel:
-          panel: "@layout/ui_example"
+          panel: "@id/ui_example"
         com.meta.spatial.toolkit.PanelDimensions:
           {}
       tag: WebviewPanel
@@ -73,7 +77,7 @@ entities:
             - 0
           rotation.format: Euler
           scale:
-            - 0.75
+            - 0.850000024
             - 0.75
             - 1
           translation:
@@ -81,10 +85,12 @@ entities:
             - 1.0999999
             - -1.70000005
           componentVersion: 1
+        com.meta.components.Visibility:
+          visible: true
         com.meta.spatial.toolkit.Panel:
-          panel: "@id/panel_activity"
+          panel: "@id/options_panel"
         com.meta.spatial.toolkit.PanelDimensions:
           {}
       tag: ComposeListPanel
 metadata:
-  version: 1.29
+  version: 1.34

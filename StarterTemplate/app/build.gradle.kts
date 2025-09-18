@@ -7,12 +7,14 @@ plugins {
 
 android {
   namespace = "com.meta.spatial.samples.startertemplate"
+  //noinspection GradleDependency
   compileSdk = 34
 
   defaultConfig {
     applicationId = "com.meta.spatial.samples.startertemplate"
-    minSdk = 29
-    //noinspection ExpiredTargetSdkVersion
+    minSdk = 34
+    // HorizonOS is Android 14 (API level 34)
+    //noinspection OldTargetApi,ExpiredTargetSdkVersion
     targetSdk = 34
     versionCode = 1
     versionName = "1.0"
@@ -59,12 +61,14 @@ dependencies {
   implementation(libs.meta.spatial.sdk.toolkit)
   implementation(libs.meta.spatial.sdk.vr)
   implementation(libs.meta.spatial.sdk.isdk)
+  implementation(libs.meta.spatial.sdk.compose)
   implementation(libs.meta.spatial.sdk.castinputforward)
   implementation(libs.meta.spatial.sdk.hotreload)
   implementation(libs.meta.spatial.sdk.datamodelinspector)
+  implementation(libs.meta.spatial.sdk.uiset)
 
   // Compose Dependencies
-  implementation("androidx.compose.foundation:foundation-android:1.7.8")
+  implementation("androidx.compose.material3:material3")
   implementation(libs.androidx.lifecycle.runtime.ktx)
   implementation(libs.androidx.activity.compose)
   implementation(platform(libs.androidx.compose.bom))
@@ -76,8 +80,6 @@ dependencies {
   debugImplementation(libs.androidx.ui.tooling)
   debugImplementation(libs.androidx.ui.test.manifest)
 }
-
-afterEvaluate { tasks.named("assembleDebug") { dependsOn("export") } }
 
 val projectDir = layout.projectDirectory
 val sceneDirectory = projectDir.dir("scenes")

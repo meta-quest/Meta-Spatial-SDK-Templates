@@ -3,6 +3,7 @@ entities:
     com.meta.components.Name:
       name: texture2
     com.meta.components.Texture:
-      image: ref:ceilingBake_beauty
+      image: ref:Wood
+      sampler: ref:sampler0
 metadata:
-  version: 1.0
+  version: 1.34
