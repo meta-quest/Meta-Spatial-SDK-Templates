@@ -76,7 +76,8 @@ class ImmersiveActivity : AppSystemActivity() {
   fun playVideo(webviewURI: String) {
     textView.visibility = View.GONE
     webView.visibility = View.VISIBLE
-    webView.loadUrl(webviewURI)
+    val additionalHttpHeaders = mapOf("Referer" to "https://${packageName}")
+    webView.loadUrl(webviewURI, additionalHttpHeaders)
   }
 
   override fun registerPanels(): List<PanelRegistration> {
