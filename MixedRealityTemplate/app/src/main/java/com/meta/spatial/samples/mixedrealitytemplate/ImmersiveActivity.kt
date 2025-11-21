@@ -11,8 +11,11 @@ import com.meta.spatial.castinputforward.CastInputForwardFeature
 import com.meta.spatial.compose.ComposeFeature
 import com.meta.spatial.compose.ComposeViewPanelRegistration
 import com.meta.spatial.core.SpatialFeature
+import com.meta.spatial.core.SpatialSDKExperimentalAPI
+import com.meta.spatial.core.Vector3
 import com.meta.spatial.datamodelinspector.DataModelInspectorFeature
 import com.meta.spatial.debugtools.HotReloadFeature
+import com.meta.spatial.isdk.IsdkFeature
 import com.meta.spatial.okhttp3.OkHttpAssetFetcher
 import com.meta.spatial.ovrmetrics.OVRMetricsDataModel
 import com.meta.spatial.ovrmetrics.OVRMetricsFeature
@@ -43,6 +46,7 @@ class ImmersiveActivity : AppSystemActivity() {
         mutableListOf<SpatialFeature>(
             VRFeature(this),
             ComposeFeature(),
+            IsdkFeature(this, spatial, systemManager),
         )
     if (BuildConfig.DEBUG) {
       features.add(CastInputForwardFeature(this))
@@ -70,6 +74,14 @@ class ImmersiveActivity : AppSystemActivity() {
   override fun onSceneReady() {
     super.onSceneReady()
 
+    scene.setLightingEnvironment(
+        ambientColor = Vector3(0f),
+        sunColor = Vector3(7.0f, 7.0f, 7.0f),
+        sunDirection = -Vector3(1.0f, 3.0f, -2.0f),
+        environmentIntensity = 0.3f,
+    )
+    scene.updateIBLEnvironment("environment.env")
+
     scene.setViewOrigin(0.0f, 0.0f, 2.0f, 180.0f)
   }
 
@@ -80,6 +92,7 @@ class ImmersiveActivity : AppSystemActivity() {
     webView.loadUrl(webviewURI, additionalHttpHeaders)
   }
 
+  @OptIn(SpatialSDKExperimentalAPI::class)
   override fun registerPanels(): List<PanelRegistration> {
     return listOf(
         // Registering light-weight Views panel
