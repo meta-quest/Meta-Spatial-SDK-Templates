@@ -2,6 +2,6 @@
 <ComponentSchema
   packageName="com.meta.spatial.samples.mixedrealitytemplate"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="https://developers.meta.com/horizon/spatial-sdk/0.9.0/ComponentSchema.xsd"
+  xsi:noNamespaceSchemaLocation="https://developers.meta.com/horizon/spatial-sdk/0.9.1/ComponentSchema.xsd"
 >
 </ComponentSchema>
