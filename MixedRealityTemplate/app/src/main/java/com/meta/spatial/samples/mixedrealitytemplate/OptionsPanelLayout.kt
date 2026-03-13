@@ -69,11 +69,11 @@ fun OptionsPanel(playVideo: (String) -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
       Column(verticalArrangement = Arrangement.spacedBy(16.dp)) {
-        repeat(5) { index ->
+        webViewUrls.forEachIndexed { index, (label, url) ->
           SecondaryButton(
-              label = webViewUrls[index].first,
+              label = label,
               expanded = true,
-              onClick = { playVideo(webViewUrls[index].second) },
+              onClick = { playVideo(url) },
           )
         }
       }
