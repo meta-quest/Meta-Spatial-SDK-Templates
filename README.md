@@ -41,7 +41,7 @@ The documentation for Meta Spatial SDK can be found [here](https://developers.me
 
 ## Release Notes
 
-Find our official release notes [here](https://developers.meta.com/horizon/documentation/spatial-sdk/release-notes).
+Find our official release notes [here](https://developers.meta.com/horizon/release-notes/?search_key=spatial-sdk).
 
 ## Spatial SDK Gradle Plugin
 
