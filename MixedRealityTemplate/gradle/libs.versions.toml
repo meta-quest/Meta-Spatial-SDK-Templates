@@ -1,6 +1,6 @@
 [versions]
-spatialsdk = "0.13.0"
-agp = "8.5.0"
+spatialsdk = "0.13.1"
+agp = "8.11.1"
 kotlin = "2.1.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"

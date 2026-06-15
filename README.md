@@ -11,8 +11,31 @@ To try out these sample apps, you will need:
 - A Meta Quest device (Quest 2/3/3S/Pro)
   - [Meta Quest build v69.0 or newer](https://www.meta.com/help/quest/articles/whats-new/release-notes/)
 - Mac or Windows
-  - Android Studio Hedgehog or newer
+  - [Android Studio Narwhal (2025.1.1) or newer](https://developer.android.com/studio) — required for Android Gradle Plugin 8.11
+  - JDK 17 (bundled with Android Studio; needed separately only if you build from the command line)
   - [Meta Spatial Editor](https://developers.meta.com/horizon/downloads/spatial-sdk/)
+
+## Build tooling
+
+These templates are configured for the build toolchain below. If you are upgrading
+an existing project, match these versions:
+
+| Tool                        | Version                        |
+| --------------------------- | ------------------------------ |
+| Gradle                      | 9.4.1 (via the Gradle wrapper) |
+| Android Gradle Plugin (AGP) | 8.11.1                         |
+| Kotlin                      | 2.1.0                          |
+| JDK                         | 17                             |
+
+> **Upgrading from an older template?** These templates use the Gradle 9.x wrapper
+> with AGP 8.11.1. A project on AGP 8.5 (or earlier) running the Gradle 9.x
+> wrapper can fail during native/CMake model sync, because that AGP version calls
+> a Gradle API removed in Gradle 9 — upgrading AGP to 8.11.1 resolves it. If you
+> are coming from Gradle 7/8, AGP 8.5 or earlier, or Kotlin 1.9, also review the
+> [Gradle upgrade guide](https://docs.gradle.org/current/userguide/upgrading_major_version.html)
+> and run the
+> [AGP Upgrade Assistant](https://developer.android.com/build/agp-upgrade-assistant)
+> in Android Studio, which automates most of the migration.
 
 ## Getting Started
 
@@ -61,6 +84,6 @@ Specifically, all the supporting materials in each template's `app/src/main/asse
 
 ## AI coding agents
 
-This repo is wired up for AI coding agents — `AGENTS.md`, `.vscode/extensions.json`, `.mcp.json`, `.cursor/rules/`, and a few client-specific dotfiles surface the **Meta Horizon** VS Code/Cursor extension, the `hzdb` MCP server, and the Meta Quest skill set automatically.
+This repo is wired up for AI coding agents: `AGENTS.md`, `.vscode/extensions.json`, `.mcp.json`, `.cursor/rules/`, and a few client-specific dotfiles surface the **Meta Horizon** VS Code/Cursor extension, the `hzdb` MCP server, and the Meta Quest skill set automatically.
 
 Full toolchain, including Meta Spatial SDK skills and per-client install instructions: [github.com/meta-quest/agentic-tools](https://github.com/meta-quest/agentic-tools).
