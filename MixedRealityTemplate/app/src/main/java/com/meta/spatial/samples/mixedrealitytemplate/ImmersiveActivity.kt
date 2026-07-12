@@ -42,12 +42,11 @@ class ImmersiveActivity : AppSystemActivity() {
   lateinit var webView: WebView
 
   override fun registerFeatures(): List<SpatialFeature> {
-    val features =
-        mutableListOf<SpatialFeature>(
-            VRFeature(this),
-            ComposeFeature(),
-            IsdkFeature(this, spatial, systemManager),
-        )
+    val features = mutableListOf<SpatialFeature>(
+        VRFeature(this),
+        ComposeFeature(),
+        IsdkFeature(this, spatial, systemManager),
+    )
     if (BuildConfig.DEBUG) {
       features.add(CastInputForwardFeature(this))
       features.add(HotReloadFeature(this))
